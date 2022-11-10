@@ -2,8 +2,8 @@ public class Planete extends CorpsCeleste {
     public int tauxO2;
     public boolean airNocif;
 
-    public Planete (int tO, boolean aN){
-        //ERREUR SI UTILISE: super(this.temperature,this.permetAtterrissage,this.diametre,this.gravite,this.pos);
+    public Planete (int temp, boolean perm, float dia, float grav, Position pos ,int tO, boolean aN){
+        super(temp,perm,dia,grav,pos);
         this.tauxO2 = tO;
         this.airNocif = aN;
     }

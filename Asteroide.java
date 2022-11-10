@@ -1,14 +1,12 @@
 public class Asteroide extends CorpsCeleste {
-    public Asteroide (int t, boolean p, float d, float g, Position pos){
-        this.temperature = t;
-        this.permetAtterrissage = p;
-        this.diametre = d;
-        this.gravite = g;
-        this.pos = pos;
+    Position vecteur;
+    public Asteroide (int t, boolean p, float d, float g, Position pos, Position vect){
+        super(t,p,d,g,pos);
+        this.vecteur = vect;
     }
 
-    //mouvement de l'astéroide pour suivre astronaute?? à voir!
-    public Position seDeplacer(Position p1){
-        this.pos = p1;
+    //fonction de deplacement linéaire de l'astéroide.
+    public void seDeplacer(){
+        this.pos.additionnerPosition(this.vecteur);
     }
 }
