@@ -7,7 +7,4 @@ public class Planete extends CorpsCeleste {
         this.tauxO2 = tO;
         this.airNocif = aN;
     }
-
-    //methodes de Planete
-    //TODO
 }
