@@ -26,4 +26,20 @@ public class Astronaute {
         }
         return reserveO2;
     }
+    public void astroDeces (){
+        //trouver conditions de deces
+        //exemples:
+        //reserveO2 == 0;
+        //attaque par alien
+        //etc...
+        this.estVivant = false;
+    }
+
+    //les getters
+    public int getReserveO2 (int reserveO2){
+        return this.reserveO2;
+    }
+    public boolean getVivant (boolean estVivant){
+        return this.estVivant;
+    }
 }

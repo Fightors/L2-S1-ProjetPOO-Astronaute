@@ -7,4 +7,12 @@ public class Planete extends CorpsCeleste {
         this.tauxO2 = tO;
         this.airNocif = aN;
     }
+
+    //les getters
+    public int getTauxO2 (int tauxO2){
+        return this.tauxO2;
+    }
+    public boolean getAirNocif (boolean airNocif){
+        return this.airNocif;
+    }
 }

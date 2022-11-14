@@ -14,5 +14,30 @@ public class CorpsCeleste {
     }
 
     //methodes de CorpsCeleste
-    //TODO
+
+    //si les limites supportables pour le corps humain sont depassees
+    //approcher du corps celeste => risque de MORT
+    public boolean estDangereux (int temperature, float gravite){
+        if (temperature > 100 || gravite > 2){
+            return true;
+        }
+        return false;
+    }
+
+    //les differents getters
+    public int getTemp (int temperature){
+        return this.temperature;
+    }
+    public boolean getPermAtt (boolean permetAtterrissage){
+        return this.permetAtterrissage;
+    }
+    public float getDiam (float diametre){
+        return this.diametre;
+    }
+    public float getGrav (float gravite){
+        return this.gravite;
+    }
+    public Position getPos (Position pos){
+        return this.pos;
+    }
 }
