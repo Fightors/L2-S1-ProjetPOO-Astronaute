@@ -12,9 +12,14 @@ public class Astronaute {
     //ArrayList<Item> Equipement = new ArrayList();
     //erreur compilation: créer classe Item pour résoudre?
 
-    public Position seDeplacer (Position posi){
-        this.pos.additionnerPosition(posi);
-        return pos;
+    @Override
+    public void seDeplacer(){
+        //Position vect;
+        //vect = methodeDemandeUtilisateur
+        this.pos.additionnerPosition();
+    }
+    public boolean peutAtterrir(CorpsCeleste corps){
+
     }
 
     public int rechargerO2 (int reserveO2, Planete p1){
@@ -42,4 +47,5 @@ public class Astronaute {
     public boolean getVivant (boolean estVivant){
         return this.estVivant;
     }
+    
 }

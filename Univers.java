@@ -9,6 +9,6 @@ public class Univers{
     }
 
     public CorpsCeleste intersection(){
-        //TODO
+        //TODO voir si intersection entre notre astronaute et tout les corps celestes
     }
 }
