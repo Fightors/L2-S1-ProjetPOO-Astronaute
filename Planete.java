@@ -8,6 +8,11 @@ public class Planete extends CorpsCeleste {
         this.airNocif = aN;
     }
 
-    //methodes de Planete
-    //TODO
+    //les getters
+    public int getTauxO2 (int tauxO2){
+        return this.tauxO2;
+    }
+    public boolean getAirNocif (boolean airNocif){
+        return this.airNocif;
+    }
 }

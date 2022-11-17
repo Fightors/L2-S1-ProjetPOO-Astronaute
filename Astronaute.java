@@ -9,5 +9,37 @@ public class Astronaute {
         this.pos = pos;
     }
 
-    ArrayList<Item> Equipement = new ArrayList();
+    //ArrayList<Item> Equipement = new ArrayList();
+    //erreur compilation: créer classe Item pour résoudre?
+
+    public Position seDeplacer (Position posi){
+        this.pos.additionnerPosition(posi);
+        return pos;
+    }
+
+    public int rechargerO2 (int reserveO2, Planete p1){
+        if(p1.tauxO2 > 0 && !(p1.airNocif)){
+            reserveO2 += p1.tauxO2;
+        }
+        else{
+            System.out.println("Impossible de recharger la reserve d'O2...");
+        }
+        return reserveO2;
+    }
+    public void astroDeces (){
+        //trouver conditions de deces
+        //exemples:
+        //reserveO2 == 0;
+        //attaque par alien
+        //etc...
+        this.estVivant = false;
+    }
+
+    //les getters
+    public int getReserveO2 (int reserveO2){
+        return this.reserveO2;
+    }
+    public boolean getVivant (boolean estVivant){
+        return this.estVivant;
+    }
 }
