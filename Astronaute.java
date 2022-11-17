@@ -41,10 +41,10 @@ public class Astronaute {
     }
 
     //les getters
-    public int getReserveO2 (int reserveO2){
+    public int getReserveO2 (){
         return this.reserveO2;
     }
-    public boolean getVivant (boolean estVivant){
+    public boolean getVivant (){
         return this.estVivant;
     }
     

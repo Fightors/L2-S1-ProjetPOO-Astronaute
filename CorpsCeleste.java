@@ -25,19 +25,19 @@ public class CorpsCeleste {
     }
 
     //les differents getters
-    public int getTemp (int temperature){
+    public int getTemp (){
         return this.temperature;
     }
-    public boolean getPermAtt (boolean permetAtterrissage){
+    public boolean getPermAtt (){
         return this.permetAtterrissage;
     }
-    public float getDiam (float diametre){
+    public float getDiam (){
         return this.diametre;
     }
-    public float getGrav (float gravite){
+    public float getGrav (){
         return this.gravite;
     }
-    public Position getPos (Position pos){
+    public Position getPos (){
         return this.pos;
     }
 }
