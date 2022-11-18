@@ -1,9 +1,9 @@
 public class CorpsCeleste {
-    public int temperature;
-    public boolean permetAtterrissage;
-    public float diametre;
-    public float gravite;
-    public Position pos;
+    private int temperature;
+    private boolean permetAtterrissage;
+    private float diametre;
+    private float gravite;
+    private Position pos;
 
     public CorpsCeleste (int t, boolean p, float d, float g, Position pos){
         this.temperature = t;
