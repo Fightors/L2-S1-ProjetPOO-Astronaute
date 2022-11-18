@@ -8,10 +8,7 @@ public class Astronaute {
         this.estVivant = eV;
         this.pos = pos;
     }
-
-    //ArrayList<Item> Equipement = new ArrayList();
-    //erreur compilation: créer classe Item pour résoudre?
-
+    
     @Override
     public void seDeplacer(){
         //Position vect;
