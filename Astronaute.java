@@ -1,3 +1,5 @@
+import java.util.scanner;
+
 public class Astronaute {
     public int reserveO2;
     public boolean estVivant;
@@ -14,10 +16,19 @@ public class Astronaute {
 
     @Override
     public void seDeplacer(){
-        //Position vect;
-        //vect = methodeDemandeUtilisateur
+        char direction;
+        Scanner scan;
+        scan =new Scanner (System.in);
+        while(char!='N' && char!='S' && char!='E' && char!='W'){
+            public char nextChar(Scanner scan, char c);
+            System.out.println("Indiquez une direction (N,S,E,W)");
+            char = scan.nextChar();
+        }
+        Position temPos;
+        
         this.pos.additionnerPosition();
     }
+
     public boolean peutAtterrir(CorpsCeleste corps){
 
     }
