@@ -10,5 +10,14 @@ public class Univers{
 
     public CorpsCeleste intersection(){
         //TODO voir si intersection entre notre astronaute et tout les corps celestes
+        for (CorpsCeleste corps : listeCorps){
+            if(astronaute.pos.getX>=(corps.pos.getPos.getX-(corps.getDiam/2)) &&
+            astronaute.pos.getX<=(corps.pos.getPos.getX+(corps.getDiam/2)) &&
+            astronaute.pos.getY>=(corps.pos.getPos.getY-(corps.getDiam/2)) &&
+            astronaute.pos.getY<=(corps.pos.getPos.getY-(corps.getDiam/2)) &&
+            ){
+                return corps;
+            }
+        }
     }
 }
