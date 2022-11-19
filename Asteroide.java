@@ -8,6 +8,6 @@ public class Asteroide extends CorpsCeleste implements Deplacement {
     //fonction de deplacement linéaire de l'astéroide.
     @Override
     public void seDeplacer(){
-        this.pos.additionnerPosition(this.vecteur);
+        this.getPos().additionnerPosition(this.vecteur);
     }
 }

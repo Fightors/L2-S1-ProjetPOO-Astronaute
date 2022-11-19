@@ -4,7 +4,7 @@ public class CorpsCeleste {
     private float diametre;
     private float gravite;
     private Position pos;
-
+    
     public CorpsCeleste (int t, boolean p, float d, float g, Position pos){
         this.temperature = t;
         this.permetAtterrissage = p;
