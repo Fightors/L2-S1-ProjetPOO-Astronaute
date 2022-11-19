@@ -1,3 +1,8 @@
 public class Tellurique extends Planete {
-    //comme la Terr donc O2, vie, nourriture??
+    //O2, vie??
+
+    public Tellurique (int temp, boolean perm, float dia, float grav, Position pos ,int tO, boolean aN){
+        super(temp,perm,dia,grav,pos, tO, aN);
+    }
+
 }

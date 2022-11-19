@@ -16,9 +16,9 @@ public class CorpsCeleste {
     //methodes de CorpsCeleste
 
     //si les limites supportables pour le corps humain sont depassees
-    //approcher du corps celeste => risque de MORT
+    //approcher du corps celeste => risque de mort
     public boolean estDangereux (){
-        if (this.temperature > 100 || this.gravite > 2){
+        if (this.temperature > 100 || this.temperature < 0 || this.gravite > 2){
             return true;
         }
         return false;

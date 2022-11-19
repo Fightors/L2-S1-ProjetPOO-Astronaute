@@ -1,9 +1,9 @@
 import java.util.scanner;
 
 public class Astronaute {
-    public int reserveO2;
-    public boolean estVivant;
-    public Position pos;
+    private int reserveO2;
+    private boolean estVivant;
+    private Position pos;
 
     public Astronaute (int r, boolean eV, Position pos){
         this.reserveO2 = r;
@@ -27,7 +27,14 @@ public class Astronaute {
     }
 
     public boolean peutAtterrir(CorpsCeleste corps){
-
+        if (astronaute.pos.getX>=(corps.pos.getPos.getX-(corps.getDiam/2)) && 
+            astronaute.pos.getX<=(corps.pos.getPos.getX+(corps.getDiam/2)) &&
+            astronaute.pos.getY>=(corps.pos.getPos.getY-(corps.getDiam/2)) &&
+            astronaute.pos.getY<=(corps.pos.getPos.getY+(corps.getDiam/2)) &&
+            ){
+                return true;
+            }
+        return false;
     }
 
     public int rechargerO2 (int reserveO2, Planete p1){
@@ -43,9 +50,10 @@ public class Astronaute {
         //trouver conditions de deces
         //exemples:
         //reserveO2 == 0;
-        //attaque par alien
-        //etc...
-        this.estVivant = false;
+        //air nocif
+        if (reserveO2 == 0 || Planete.airNocif){
+            this.estVivant = false;
+        } 
     }
 
     //les getters
