@@ -1,10 +1,15 @@
 public class Etoile extends CorpsCeleste {
-    //type d'étoile à ajouter?
-    //comme attribut spécifique de Etoile
+    private double diamRayChaleur;
 
-    public Etoile (int t, boolean perm, float d, float g, Position pos){
-        super(t, perm, d, g, pos);
-        perm = false;
-        //this.attribut si autres attributs
+    public Etoile (int t, float d, float g, Position pos){
+        super(t,false, d, g, pos);
+        this.diamRayChaleur=this.getDiam()*1.5;
+    }
+
+    public boolean estDansRay(Astronaute man){
+        return(man.pos.getX()>=(this.getPos().getX()-(this.diamRayChaleur/2)) &&
+            man.pos.getX()<=(this.getPos().getX()+(this.diamRayChaleur/2)) &&
+            man.pos.getY()>=(this.getPos().getY()-(this.diamRayChaleur/2)) &&
+            man.pos.getY()<=(this.getPos().getY()+(this.diamRayChaleur/2)));
     }
 }
