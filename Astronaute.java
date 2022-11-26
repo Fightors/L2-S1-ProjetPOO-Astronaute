@@ -1,13 +1,13 @@
 import java.util.Scanner;
 
 public class Astronaute {
-    private int reserveO2;
+    private Bouteille02 bouteille02;
     private boolean estVivant;
     private Position pos;
 
-    public Astronaute (int r, boolean eV, Position pos){
-        this.reserveO2 = r;
-        this.estVivant = eV;
+    public Astronaute (Bouteille02 b, Position pos){
+        this.bouteille02= b;
+        this.estVivant = true;
         this.pos = pos;
     }
     
@@ -37,41 +37,24 @@ public class Astronaute {
         return false;
     }
 
-    public int rechargerO2 (int reserveO2, Planete p1){
+    public void rechargerO2 (Planete p1){
         if(p1.getTauxO2() > 0 && !(p1.getAirNocif())){
-            reserveO2 += p1.getTauxO2();
+            this.bouteille02.setO2actuel(bouteille02.getcapaO2Max());
         }
         else{
             System.out.println("Impossible de recharger la reserve d'O2...");
         }
-        return reserveO2;
-    }
-    public void astroDeces (Planete planete){
-        //trouver conditions de deces
-        //exemples:
-        //reserveO2 == 0;
-        //air nocif 
-        //gravite >= 10
-        if (reserveO2 == 0 || planete.getAirNocif() || planete.gravite >= 10 || planete.temperature >= 70){
-            this.estVivant = false;
-        } 
     }
 
     //les getters
-    public int getReserveO2 (){
-        return this.reserveO2;
-    }
     public boolean getVivant (){
         return this.estVivant;
     }
     public Position getPos() {
-        return pos;
+        return this.pos;
     }
     
     //les setters
-    public void setReserveO2(int reserveO2) {
-        this.reserveO2 = reserveO2;
-    }
     public void setPos(Position pos) {
         this.pos = pos;
     }
