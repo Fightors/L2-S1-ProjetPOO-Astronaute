@@ -1,4 +1,4 @@
-public class Vaisseau extends Equipement{
+public class Vaisseau{
     private int puissance;
 
     public Vaisseau(int puissance) {
@@ -6,7 +6,8 @@ public class Vaisseau extends Equipement{
     }
 
     public boolean scan(int tempCS , boolean presH2O, float grav ){
-        //TODO
+        return true;
+        //TOUDOU
     }
 
     public int getPuissance(){

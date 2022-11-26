@@ -1,29 +1,44 @@
 import java.util.Scanner;
 
-public class Astronaute {
-    private Bouteille02 bouteille02;
+public class Astronaute implements Deplacement{
+    private BouteilleO2 bouteilleO2;
     private boolean estVivant;
     private Position pos;
+    private Vaisseau vaisseau;
 
-    public Astronaute (Bouteille02 b, Position pos){
-        this.bouteille02= b;
+    public Astronaute (BouteilleO2 b, Position pos, Vaisseau vaisseau){
+        this.bouteilleO2= b;
         this.estVivant = true;
         this.pos = pos;
+        this.vaisseau = vaisseau;
     }
     
     @Override
     public void seDeplacer(){
-        char direction;
-        Scanner scan;
-        scan =new Scanner (System.in);
-        while(char!='N' && char!='S' && char!='E' && char!='W'){
-            public char nextChar(Scanner scan, char c);
-            System.out.println("Indiquez une direction (N,S,E,W)");
-            char = scan.nextChar();
+        Scanner sc = new Scanner (System.in);
+        System.out.println("Entrez un Mouvement (N,S,E,W) : ");
+        char move = sc.next().charAt(0);
+        while(move!='N' && move!='S' && move!='E' && move!='W'){
+            System.out.println("Indiquez une direction valide (N,S,E,W)");
+            move = sc.next().charAt(0);
         }
-        Position temPos;
-        
-        this.pos.additionnerPosition(temPos);
+        sc.close();
+        if(move == 'N'){
+            Position nouvPos = new Position (0,vaisseau.getPuissance());
+            this.pos.additionnerPosition(nouvPos);
+        }
+        else if(move == 'S'){
+            Position nouvPos = new Position (0,-(vaisseau.getPuissance()));
+            this.pos.additionnerPosition(nouvPos);
+        }
+        else if(move == 'E'){
+            Position nouvPos = new Position (vaisseau.getPuissance(),0);
+            this.pos.additionnerPosition(nouvPos);
+        }
+        if(move == 'W'){
+            Position nouvPos = new Position (-(vaisseau.getPuissance()),0);
+            this.pos.additionnerPosition(nouvPos);
+        }
     }
 
     public boolean peutAtterrir(CorpsCeleste corps){
@@ -39,7 +54,7 @@ public class Astronaute {
 
     public void rechargerO2 (Planete p1){
         if(p1.getTauxO2() > 0 && !(p1.getAirNocif())){
-            this.bouteille02.setO2actuel(bouteille02.getcapaO2Max());
+            this.bouteilleO2.setO2actuel(bouteilleO2.getcapaO2Max());
         }
         else{
             System.out.println("Impossible de recharger la reserve d'O2...");
