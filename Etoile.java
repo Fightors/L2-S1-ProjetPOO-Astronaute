@@ -7,9 +7,9 @@ public class Etoile extends CorpsCeleste {
     }
 
     public boolean estDansRay(Astronaute man){
-        return(man.pos.getX()>=(this.getPos().getX()-(this.diamRayChaleur/2)) &&
-            man.pos.getX()<=(this.getPos().getX()+(this.diamRayChaleur/2)) &&
-            man.pos.getY()>=(this.getPos().getY()-(this.diamRayChaleur/2)) &&
-            man.pos.getY()<=(this.getPos().getY()+(this.diamRayChaleur/2)));
+        return(man.getPos().getX()>=(this.getPos().getX()-(this.diamRayChaleur/2)) &&
+            man.getPos().getX()<=(this.getPos().getX()+(this.diamRayChaleur/2)) &&
+            man.getPos().getY()>=(this.getPos().getY()-(this.diamRayChaleur/2)) &&
+            man.getPos().getY()<=(this.getPos().getY()+(this.diamRayChaleur/2)));
     }
 }
