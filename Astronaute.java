@@ -16,12 +16,11 @@ public class Astronaute implements Deplacement{
     @Override
     public void seDeplacer(){
         Scanner sc = new Scanner (System.in);
-        System.out.println("Entrez un Mouvement (N,S,E,W) : ");
-        char move = sc.next().charAt(0);
-        while(move!='N' && move!='S' && move!='E' && move!='W'){
+        char move;
+        do{
             System.out.println("Indiquez une direction valide (N,S,E,W)");
             move = sc.next().charAt(0);
-        }
+        }while (move!='N' && move!='S' && move!='E' && move!='W');
         sc.close();
         if(move == 'N'){
             Position nouvPos = new Position (0,vaisseau.getPuissance());
