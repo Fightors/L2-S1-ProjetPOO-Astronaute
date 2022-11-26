@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Univers{
     private Astronaute astronaute;
     private ArrayList<CorpsCeleste> listeCorps;
@@ -10,14 +12,15 @@ public class Univers{
 
     public CorpsCeleste intersection(){
         // voir si intersection entre notre astronaute et tout les corps celestes
-        for (CorpsCeleste corps : listeCorps){
-            if(astronaute.pos.getX>=(corps.pos.getPos.getX-(corps.getDiam/2)) &&
-            astronaute.pos.getX<=(corps.pos.getPos.getX+(corps.getDiam/2)) &&
-            astronaute.pos.getY>=(corps.pos.getPos.getY-(corps.getDiam/2)) &&
-            astronaute.pos.getY<=(corps.pos.getPos.getY+(corps.getDiam/2)) &&
+        for (CorpsCeleste corps : this.listeCorps){
+            if(astronaute.pos.getX()>=(corps.getPos().getX()-(corps.getDiam()/2)) &&
+            astronaute.pos.getX()<=(corps.getPos().getX()+(corps.getDiam()/2)) &&
+            astronaute.pos.getY()>=(corps.getPos().getY()-(corps.getDiam()/2)) &&
+            astronaute.pos.getY()<=(corps.getPos().getY()+(corps.getDiam()/2))
             ){
                 return corps;
             }
         }
+        return null;
     }
 }
