@@ -5,22 +5,45 @@ public class Univers{
     private ArrayList<CorpsCeleste> listeCorps;
 
 
-    public Univers(Astronaute astro, ArrayList<CorpsCeleste> l_Corps){
-        this.astronaute = astro;
-        this.listeCorps = l_Corps;
+    /**
+     * @param astronaute
+     * @param listeCorps
+     */
+    public Univers(Astronaute astronaute, ArrayList<CorpsCeleste> listeCorps) {
+        this.astronaute = astronaute;
+        this.listeCorps = listeCorps;
     }
 
+    /**
+     * @return 
+     */
     public CorpsCeleste intersection(){
         // voir si intersection entre notre astronaute et tout les corps celestes
-        for (CorpsCeleste corps : this.listeCorps){
-            if(astronaute.pos.getX()>=(corps.getPos().getX()-(corps.getDiam()/2)) &&
-            astronaute.pos.getX()<=(corps.getPos().getX()+(corps.getDiam()/2)) &&
-            astronaute.pos.getY()>=(corps.getPos().getY()-(corps.getDiam()/2)) &&
-            astronaute.pos.getY()<=(corps.getPos().getY()+(corps.getDiam()/2))
+        for (CorpsCeleste corps : listeCorps){
+            if(astronaute.getPos().getX()>=(corps.getPos().getX()-(corps.getDiam()/2)) &&
+            astronaute.getPos().getX()<=(corps.getPos().getX()+(corps.getDiam()/2)) &&
+            astronaute.getPos().getY()>=(corps.getPos().getY()-(corps.getDiam()/2)) &&
+            astronaute.getPos().getY()<=(corps.getPos().getY()+(corps.getDiam()/2))
             ){
                 return corps;
             }
         }
         return null;
+    }
+
+    public Astronaute getAstronaute() {
+        return astronaute;
+    }
+
+    public void setAstronaute(Astronaute astronaute) {
+        this.astronaute = astronaute;
+    }
+
+    public ArrayList<CorpsCeleste> getListeCorps() {
+        return listeCorps;
+    }
+
+    public void setListeCorps(ArrayList<CorpsCeleste> listeCorps) {
+        this.listeCorps = listeCorps;
     }
 }

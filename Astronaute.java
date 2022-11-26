@@ -1,9 +1,9 @@
-import java.util.scanner;
+import java.util.Scanner;
 
 public class Astronaute {
-    public int reserveO2;
-    public boolean estVivant;
-    public Position pos;
+    private int reserveO2;
+    private boolean estVivant;
+    private Position pos;
 
     public Astronaute (int r, boolean eV, Position pos){
         this.reserveO2 = r;
@@ -23,29 +23,38 @@ public class Astronaute {
         }
         Position temPos;
         
-        this.pos.additionnerPosition();
+        this.pos.additionnerPosition(temPos);
     }
 
     public boolean peutAtterrir(CorpsCeleste corps){
-
+        if (this.pos.getX()>=(corps.getPos().getX()-(corps.getDiam()/2)) && 
+            this.pos.getX()<=(corps.getPos().getX()+(corps.getDiam()/2)) &&
+            this.pos.getY()>=(corps.getPos().getY()-(corps.getDiam()/2)) &&
+            this.pos.getY()<=(corps.getPos().getY()+(corps.getDiam()/2))
+            ){
+                return true;
+            }
+        return false;
     }
 
     public int rechargerO2 (int reserveO2, Planete p1){
-        if(p1.tauxO2 > 0 && !(p1.airNocif)){
-            reserveO2 += p1.tauxO2;
+        if(p1.getTauxO2() > 0 && !(p1.getAirNocif())){
+            reserveO2 += p1.getTauxO2();
         }
         else{
             System.out.println("Impossible de recharger la reserve d'O2...");
         }
         return reserveO2;
     }
-    public void astroDeces (){
+    public void astroDeces (Planete planete){
         //trouver conditions de deces
         //exemples:
         //reserveO2 == 0;
-        //attaque par alien
-        //etc...
-        this.estVivant = false;
+        //air nocif 
+        //gravite >= 10
+        if (reserveO2 == 0 || planete.getAirNocif() || planete.gravite >= 10 || planete.temperature >= 70){
+            this.estVivant = false;
+        } 
     }
 
     //les getters
@@ -55,5 +64,19 @@ public class Astronaute {
     public boolean getVivant (){
         return this.estVivant;
     }
+    public Position getPos() {
+        return pos;
+    }
     
+    //les setters
+    public void setReserveO2(int reserveO2) {
+        this.reserveO2 = reserveO2;
+    }
+    public void setPos(Position pos) {
+        this.pos = pos;
+    }
+    public void setEstVivant(boolean estVivant) {
+        this.estVivant = estVivant;
+    }
+
 }
