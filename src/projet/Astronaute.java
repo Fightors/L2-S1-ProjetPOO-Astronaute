@@ -62,6 +62,10 @@ public class Astronaute implements Deplacement{
         }
     }
 
+    public void reducO2(){
+        this.bouteilleO2.s02actuel(this.bouteilleO2.getO2actuel()-5);
+    }
+
     //les getters
     public boolean getVivant (){
         return this.estVivant;
