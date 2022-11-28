@@ -19,4 +19,8 @@ public class Position {
         this.x += p1.getX();
         this.y += p1.getY();
     }
+
+    public void affichagePos(){
+        System.out.println("pos X: " + this.x + ", pos Y: " + this.y);
+    }
 }
