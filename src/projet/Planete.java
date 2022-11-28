@@ -29,7 +29,7 @@ public class Planete extends CorpsCeleste {
     @Override
     public void afficherCorpsCeleste(){
         System.out.println("La temperature: " + this.getTemp() + "°C, avec diametre: " + this.getDiam() + " km, avec gravite: "
-                             + this.getGrav() + ", a la position: " + this.getPos() + ", taux O2: " + this.tauxO2 
+                             + this.getGrav() + ", a la position X: " + this.getPos().getX() + " ,position Y: " + this.getPos().getY() + ", taux O2: " + this.tauxO2 
                              + ", l'air est nocif: " + this.airNocif);
     }
 }
