@@ -1,4 +1,5 @@
 package projet;
+import java.lang.Math.*;
 
 public class Etoile extends CorpsCeleste {
     private double diamRayChaleur;
@@ -9,10 +10,14 @@ public class Etoile extends CorpsCeleste {
     }
 
     public boolean estDansRay(Astronaute man){
-        return(man.getPos().getX()>=(this.getPos().getX()-(this.diamRayChaleur/2)) &&
-            man.getPos().getX()<=(this.getPos().getX()+(this.diamRayChaleur/2)) &&
-            man.getPos().getY()>=(this.getPos().getY()-(this.diamRayChaleur/2)) &&
-            man.getPos().getY()<=(this.getPos().getY()+(this.diamRayChaleur/2)));
+        double distance;
+
+        distance = Math.sqrt(Math.pow(this.pos.getX() - man.getPos().getX(),2) + Math.pow(this.pos.getX() - man.getPos().getX(),2));
+        
+        if(distance <= this.diamRayChaleur){
+            return true;
+        }
+        return false;
     }
 
     @Override
