@@ -12,7 +12,7 @@ public class Etoile extends CorpsCeleste {
     public boolean estDansRay(Astronaute man){
         double distance;
 
-        distance = Math.sqrt(Math.pow(this.pos.getX() - man.getPos().getX(),2) + Math.pow(this.pos.getX() - man.getPos().getX(),2));
+        distance = Math.sqrt(Math.pow(this.getPos().getX() - man.getPos().getX(),2) + Math.pow(this.getPos().getX() - man.getPos().getX(),2));
         
         if(distance <= this.diamRayChaleur){
             return true;

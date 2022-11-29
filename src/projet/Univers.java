@@ -35,7 +35,7 @@ public class Univers{
     public void affichage(){
         int i = 1;
         for(CorpsCeleste c : this.listeCorps){
-            System.out.println("Celeste numero: " + i + " ,la temperature: " + c.getTemp() + "°C, avec diametre: " + c.getDiam() + " km, avec gravite: "
+            System.out.println("Corps celeste numero: " + i + " ,la temperature: " + c.getTemp() + "°C, avec diametre: " + c.getDiam() + " km, avec gravite: "
                              + c.getGrav() + ", a la position X: " + c.getPos().getX() + ", position Y: " + c.getPos().getY());
             i++;            
         }

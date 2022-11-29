@@ -1,5 +1,5 @@
 package projet;
-import java.util.scanner;
+import java.util.Scanner;
 
 public class Tour{
     private int nbTours;
@@ -8,35 +8,37 @@ public class Tour{
         this.nbTours=0;
     }
 
-    public plusTour(){
+    public void plusTour(){
         this.nbTours+=1;
     }
 
-    public jouerTour(Univers univ, Astronaute asn, boolean foundIt){
+    public void jouerTour(Univers univ, Astronaute asn, boolean foundIt){
         asn.seDeplacer();
-        CorpsCeleste corps = univ.intersection();
+        CorpsCeleste corps = univ.intersectionCorpsCeleste();
         this.plusTour();
         if(corps!=null){
+            Etoile star = (Etoile)corps;
             if(corps instanceof Asteroide || 
-            (corps instanceof Etoile && corps.estDansRay(asn))){
+            (corps instanceof Etoile && star.estDansRay(asn))){
                 asn.setEstVivant(false);
             }
             else{
                 asn.reducO2();
-                if(asn.bouteilleO2.getO2actuel()<=0){
+                if(asn.getBouteilleO2().getO2actuel()<=0){
                     asn.setEstVivant(false);
                 }
                 else{
                     if(corps.getPermAtt() == true){
                         if(corps.estDangereux() == true){
-                            System.out.println("Attention ! Danger de mort sur ce corps céleste !")
+                            System.out.println("Attention ! Danger de mort sur ce corps céleste !");
                         }
                         else{
                             if(corps instanceof Tellurique){
-                                if(corps.getAirNocif == true){
+                                Tellurique tellu = (Tellurique)corps;
+                                if(tellu.getAirNocif() == true){
                                     System.out.println("Attention ! Danger de mort sur ce corps céleste !");
-                                    if(corps.getTauxO2()>0){
-                                        asn.bouteilleO2.setO2actuel(asn.bouteilleO2.getcapaO2Max);
+                                    if(tellu.getTauxO2()>0){
+                                        asn.getBouteilleO2().setO2actuel(asn.getBouteilleO2().getcapaO2Max());
                                     }
                                 }
                                 else{

@@ -28,9 +28,6 @@ public class TestVaisseau{
 
         lS = v1.scanner(u,astro,5);
 
-        Univers u2 = new Univers(astro,lS);
-
-        u2.affichage();
 
         //c1 = u.intersectionCorpsCeleste();
         //c1.afficherCorpsCeleste();

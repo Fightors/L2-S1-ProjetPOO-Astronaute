@@ -13,7 +13,7 @@ public class BouteilleO2 {
         return this.capaO2Max;
     }
 
-    public int O2actuel(){
+    public int getO2actuel(){
         return this.O2actuel;
     }
 

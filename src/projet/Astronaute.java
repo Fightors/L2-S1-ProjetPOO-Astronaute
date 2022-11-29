@@ -19,38 +19,32 @@ public class Astronaute implements Deplacement{
     public void seDeplacer(){
         Scanner sc = new Scanner (System.in);
         char move;
+        int power;
         do{
             System.out.println("Indiquez une direction valide (N,S,E,W)");
             move = sc.next().charAt(0);
         }while (move!='N' && move!='S' && move!='E' && move!='W');
+        do{
+            System.out.println("Indiquez une puissance >0 et <PuissanceMax de: "+ this.vaisseau.getPuissance());
+            power = sc.nextInt();
+        }while (power< 0 && power > this.vaisseau.getPuissance());
         sc.close();
         if(move == 'N'){
-            Position nouvPos = new Position (0,vaisseau.getPuissance());
+            Position nouvPos = new Position (0,power);
             this.pos.additionnerPosition(nouvPos);
         }
         else if(move == 'S'){
-            Position nouvPos = new Position (0,-(vaisseau.getPuissance()));
+            Position nouvPos = new Position (0,-(power));
             this.pos.additionnerPosition(nouvPos);
         }
         else if(move == 'E'){
-            Position nouvPos = new Position (vaisseau.getPuissance(),0);
+            Position nouvPos = new Position (power,0);
             this.pos.additionnerPosition(nouvPos);
         }
-        if(move == 'W'){
-            Position nouvPos = new Position (-(vaisseau.getPuissance()),0);
+        else if(move == 'W'){
+            Position nouvPos = new Position (-(power),0);
             this.pos.additionnerPosition(nouvPos);
         }
-    }
-
-    public boolean peutAtterrir(CorpsCeleste corps){
-        if (this.pos.getX()>=(corps.getPos().getX()-(corps.getDiam()/2)) && 
-            this.pos.getX()<=(corps.getPos().getX()+(corps.getDiam()/2)) &&
-            this.pos.getY()>=(corps.getPos().getY()-(corps.getDiam()/2)) &&
-            this.pos.getY()<=(corps.getPos().getY()+(corps.getDiam()/2))
-            ){
-                return true;
-            }
-        return false;
     }
 
     public void rechargerO2 (Planete p1){
@@ -63,7 +57,7 @@ public class Astronaute implements Deplacement{
     }
 
     public void reducO2(){
-        this.bouteilleO2.s02actuel(this.bouteilleO2.getO2actuel()-5);
+        this.bouteilleO2.setO2actuel(this.bouteilleO2.getO2actuel()-5);
     }
 
     //les getters
@@ -72,6 +66,12 @@ public class Astronaute implements Deplacement{
     }
     public Position getPos() {
         return this.pos;
+    }
+    public BouteilleO2 getBouteilleO2(){
+        return this.bouteilleO2;
+    }
+    public Vaisseau getVaisseau(){
+        return this.vaisseau;
     }
     
     //les setters

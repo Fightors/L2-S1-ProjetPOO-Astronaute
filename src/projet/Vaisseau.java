@@ -20,10 +20,15 @@ public class Vaisseau{
                 ls.add(c);
             }
         }         
-
+        int i = 1;
+        for(CorpsCeleste c : ls){
+            System.out.println("Corps celeste numero: " + i + " ,la temperature: " + c.getTemp() + "°C, avec diametre: " + c.getDiam() + " km, avec gravite: "
+                             + c.getGrav() + ", a la position X: " + c.getPos().getX() + ", position Y: " + c.getPos().getY());
+            i++;            
+        }
         return ls;
     }
-
+    
     public int getPuissance(){
         return this.puissance;
     }
