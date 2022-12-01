@@ -12,46 +12,31 @@ public class Tour{
         this.nbTours+=1;
     }
 
-    public void jouerTour(Univers univ, Astronaute asn, boolean foundIt){
+    public void jouerTour(Univers univ, Astronaute asn){
+        System.out.println("Postion de l'astronaute:" );
+        asn.getPos().affichagePos();
         asn.seDeplacer();
         CorpsCeleste corps = univ.intersectionCorpsCeleste();
         this.plusTour();
         if(corps!=null){
-            
-            if(corps instanceof Asteroide){
-                asn.setEstVivant(false);
-            }
-            else if(corps instanceof Etoile){
+            if(corps.estDangereux() == true){
                 asn.setEstVivant(false);
             }
             else{
                 asn.reducO2();
                 if(asn.getBouteilleO2().getO2actuel()<=0){
+                    System.out.println("Vous êtes mort car votre bouteille d'oxygène est vide !");
                     asn.setEstVivant(false);
                 }
+                if(corps.estVivable()==false){
+                    System.out.println("Cette planète n'ets pas vivable, vous avez néanmoins rechargé votre bouteille d'oxygène !");
+                    asn.getBouteilleO2().setO2actuel(asn.getBouteilleO2().getcapaO2Max());
+                }
                 else{
-                    if(corps.getPermAtt() == true){
-                        if(corps.estDangereux() == true){
-                            System.out.println("Attention ! Danger de mort sur ce corps céleste !");
-                        }
-                        else{
-                            if(corps instanceof Tellurique){
-                                Tellurique tellu = (Tellurique)corps;
-                                if(tellu.getAirNocif() == true){
-                                    System.out.println("Attention ! Danger de mort sur ce corps céleste !");
-                                    if(tellu.getTauxO2()>0){
-                                        asn.getBouteilleO2().setO2actuel(asn.getBouteilleO2().getcapaO2Max());
-                                    }
-                                }
-                                else{
-                                    foundIt=true;
-                                    System.out.println("Bravo ! Vous avez trouvé une planète vivable en "+ this.nbTours+", il est temps de commencer votre nouvelle vie !");
-                                    System.out.println("Le corps céleste vivable que vous avez trouver est :");
-                                    corps.afficherCorpsCeleste();
-                                }
-                            }
-                        }
-                    }
+                    asn.setTrouvePlanete(true);
+                    System.out.println("Bravo ! Vous avez trouvé une planète vivable en "+ this.nbTours+" tour(s), il est temps de commencer votre nouvelle vie !");
+                    System.out.println("Le corps céleste vivable que vous avez trouver est :");
+                    corps.afficherCorpsCeleste();
                 }
             }
         }
@@ -60,3 +45,5 @@ public class Tour{
         }
     }
 }
+
+

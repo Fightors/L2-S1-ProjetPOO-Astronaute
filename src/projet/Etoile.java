@@ -5,8 +5,17 @@ public class Etoile extends CorpsCeleste {
     private double diamRayChaleur;
 
     public Etoile (int t, float d, float g, Position pos){
-        super(t,false, d, g, pos);
+        super(t, d, g, pos);
         this.diamRayChaleur=this.getDiam()*1.5;
+    }
+
+    public boolean estDangereux(){
+        System.out.println("Vous vous êtes mort percuté brulé par une étoile !");
+        return true;
+    }
+
+    public boolean estVivable(){
+        return false;
     }
 
     public boolean estDansRay(Astronaute man){

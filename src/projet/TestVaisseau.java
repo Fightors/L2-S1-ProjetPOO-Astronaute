@@ -3,7 +3,7 @@ import java.util.*;
 
 public class TestVaisseau{
     public static void main(String[] args){
-
+        /*
         Vaisseau v1;
         v1 = new Vaisseau(5);
         
@@ -32,6 +32,6 @@ public class TestVaisseau{
         //c1 = u.intersectionCorpsCeleste();
         //c1.afficherCorpsCeleste();
         //u.affichage();
-     
+    */
     }
 }

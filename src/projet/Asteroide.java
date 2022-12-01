@@ -2,8 +2,8 @@ package projet;
 
 public class Asteroide extends CorpsCeleste implements Deplacement {
     private Position vecteur;
-    public Asteroide (int t, boolean p, float d, float g, Position pos, Position vect){
-        super(t,p,d,g,pos);
+    public Asteroide (int t, float d, float g, Position pos, Position vect){
+        super(t,d,g,pos);
         this.vecteur = vect;
     }
 
@@ -13,6 +13,14 @@ public class Asteroide extends CorpsCeleste implements Deplacement {
         this.getVecteur().additionnerPosition(this.vecteur);
     }
 
+    public boolean estDangereux(){
+        System.out.println("Vous vous êtes mort percuté par un astéroïde !");
+        return true;
+    }
+
+    public boolean estVivable(){
+        return false;
+    }
 
     //getter
     public Position getVecteur() {

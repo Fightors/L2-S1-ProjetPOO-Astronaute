@@ -7,12 +7,14 @@ public class Astronaute implements Deplacement{
     private boolean estVivant;
     private Position pos;
     private Vaisseau vaisseau;
+    private boolean trouvePlanete ;
 
     public Astronaute (BouteilleO2 b, Position pos, Vaisseau vaisseau){
         this.bouteilleO2= b;
         this.estVivant = true;
         this.pos = pos;
         this.vaisseau = vaisseau;
+        this.trouvePlanete = false;
     }
     
     @Override
@@ -74,6 +76,9 @@ public class Astronaute implements Deplacement{
     public Vaisseau getVaisseau(){
         return this.vaisseau;
     }
+    public boolean getTrouvePlanete(){
+        return this.trouvePlanete;
+    }
     
     //les setters
     public void setPos(Position pos) {
@@ -81,6 +86,9 @@ public class Astronaute implements Deplacement{
     }
     public void setEstVivant(boolean estVivant) {
         this.estVivant = estVivant;
+    }
+    public void setTrouvePlanete(boolean estTrouve){
+        this.trouvePlanete = estTrouve;
     }
 
 }

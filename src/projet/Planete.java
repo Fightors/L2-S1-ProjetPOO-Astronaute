@@ -1,11 +1,11 @@
 package projet;
 
-public class Planete extends CorpsCeleste {
+public abstract class Planete extends CorpsCeleste {
     private int tauxO2;
     private boolean airNocif;
 
-    public Planete (int temp, boolean perm, float dia, float grav, Position pos ,int tO, boolean aN){
-        super(temp,perm,dia,grav,pos);
+    public Planete (int temp, float dia, float grav, Position pos ,int tO, boolean aN){
+        super(temp,dia,grav,pos);
         this.tauxO2 = tO;
         this.airNocif = aN;
     }
@@ -28,8 +28,8 @@ public class Planete extends CorpsCeleste {
 
     @Override
     public void afficherCorpsCeleste(){
-        System.out.println("La temperature: " + this.getTemp() + "°C, avec diametre: " + this.getDiam() + " km, avec gravite: "
-                             + this.getGrav() + ", a la position X: " + this.getPos().getX() + " ,position Y: " + this.getPos().getY() + ", taux O2: " + this.tauxO2 
+        System.out.println("Cette planète a une temperature: " + this.getTemp() + "°C, avec un diametre: " + this.getDiam() + " km, et une gravite de : "
+                             + this.getGrav() + "Il est situé à la position X: " + this.getPos().getX() + " ,position Y: " + this.getPos().getY() + ", et possède un taux O2: " + this.tauxO2 
                              + ", l'air est nocif: " + this.airNocif);
     }
 }
