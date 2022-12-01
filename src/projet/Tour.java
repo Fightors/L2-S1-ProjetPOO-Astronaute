@@ -17,9 +17,11 @@ public class Tour{
         CorpsCeleste corps = univ.intersectionCorpsCeleste();
         this.plusTour();
         if(corps!=null){
-            Etoile star = (Etoile)corps;
-            if(corps instanceof Asteroide || 
-            (corps instanceof Etoile && star.estDansRay(asn))){
+            
+            if(corps instanceof Asteroide){
+                asn.setEstVivant(false);
+            }
+            else if(corps instanceof Etoile){
                 asn.setEstVivant(false);
             }
             else{

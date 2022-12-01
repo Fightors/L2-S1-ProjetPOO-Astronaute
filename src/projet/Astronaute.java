@@ -25,10 +25,9 @@ public class Astronaute implements Deplacement{
             move = sc.next().charAt(0);
         }while (move!='N' && move!='S' && move!='E' && move!='W');
         do{
-            System.out.println("Indiquez une puissance >0 et <PuissanceMax de: "+ this.vaisseau.getPuissance());
+            System.out.println("Indiquez une puissance entre 1 et "+ this.vaisseau.getPuissance());
             power = sc.nextInt();
-        }while (power< 0 && power > this.vaisseau.getPuissance());
-        sc.close();
+        }while (power<= 0 || power > this.vaisseau.getPuissance());
         if(move == 'N'){
             Position nouvPos = new Position (0,power);
             this.pos.additionnerPosition(nouvPos);
@@ -45,6 +44,8 @@ public class Astronaute implements Deplacement{
             Position nouvPos = new Position (-(power),0);
             this.pos.additionnerPosition(nouvPos);
         }
+        move=' ';
+        power=0;
     }
 
     public void rechargerO2 (Planete p1){

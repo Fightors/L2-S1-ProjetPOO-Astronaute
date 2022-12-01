@@ -24,7 +24,7 @@ public class Jeu{
         lC.add(p2);
         lC.add(p1);
             
-        Astronaute Thomas = new Astronaute(bout,new Position(1,1),v1);
+        Astronaute Thomas = new Astronaute(bout,new Position(5,7),v1);
 
         Univers u = new Univers(Thomas,lC);
         Tour turn = new Tour();

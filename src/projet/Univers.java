@@ -21,10 +21,17 @@ public class Univers{
         double distance;
 
         for(CorpsCeleste c : this.listeCorps){
-            distance = Math.sqrt(Math.pow(c.getPos().getX() - this.astronaute.getPos().getX(),2) + Math.pow(c.getPos().getY() - this.astronaute.getPos().getY(),2));
-            
-            if(distance <= c.getDiam()/2){
-                return c;
+            if( c instanceof Etoile){
+                Etoile star = (Etoile)c;
+                if(star.estDansRay(this.astronaute)){
+                    return c;
+                }
+            }
+            else{
+                distance = Math.sqrt(Math.pow(c.getPos().getX() - this.astronaute.getPos().getX(),2) + Math.pow(c.getPos().getY() - this.astronaute.getPos().getY(),2));
+                if(distance <= c.getDiam()/2){
+                    return c;
+                }
             }
         }  
 
