@@ -38,6 +38,15 @@ public class Univers{
         return null;
     }
 
+    public void moveAste(){
+        for(CorpsCeleste c : this.listeCorps){
+            if( c instanceof Asteroide){
+                Asteroide aste = (Asteroide)c;
+                aste.seDeplacer();
+            }
+        }
+    }
+
     //affichage tout les corps celeste dans l'univers
     public void affichage(){
         int i = 1;

@@ -15,7 +15,9 @@ public class Tellurique extends Planete {
             return false;
         }
     }
-
+    public void seDeplacer(){
+        
+    }
     public boolean estVivable(){
         return (this.getGrav()<2 && this.getGrav()>=1 && this.getAirNocif()==false && this.getTemp()>0 && this.getTemp()<50);
     }

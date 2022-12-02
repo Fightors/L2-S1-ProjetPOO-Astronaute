@@ -2,7 +2,7 @@ package projet;
 
 public class Gazeuse extends Planete {
     
-    public Gazeuse(int temp, float dia, float grav, Position pos, int tO, boolean aN) {
+    public Gazeuse(int temp, float dia, float grav, Position pos, int tO) {
         super(temp, dia, grav, pos, tO, true);
     }
 
@@ -12,5 +12,8 @@ public class Gazeuse extends Planete {
 
     public boolean estVivable(){
         return false;
+    }
+    public void seDeplacer(){
+
     }
 }

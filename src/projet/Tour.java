@@ -13,36 +13,39 @@ public class Tour{
     }
 
     public void jouerTour(Univers univ, Astronaute asn){
+        univ.moveAste();
         System.out.println("Postion de l'astronaute:" );
         asn.getPos().affichagePos();
         asn.seDeplacer();
-        CorpsCeleste corps = univ.intersectionCorpsCeleste();
-        this.plusTour();
-        if(corps!=null){
-            if(corps.estDangereux() == true){
-                asn.setEstVivant(false);
-            }
-            else{
-                asn.reducO2();
-                if(asn.getBouteilleO2().getO2actuel()<=0){
-                    System.out.println("Vous êtes mort car votre bouteille d'oxygène est vide !");
-                    asn.setEstVivant(false);
-                }
-                if(corps.estVivable()==false){
-                    System.out.println("Cette planète n'ets pas vivable, vous avez néanmoins rechargé votre bouteille d'oxygène !");
-                    asn.getBouteilleO2().setO2actuel(asn.getBouteilleO2().getcapaO2Max());
-                }
-                else{
-                    asn.setTrouvePlanete(true);
-                    System.out.println("Bravo ! Vous avez trouvé une planète vivable en "+ this.nbTours+" tour(s), il est temps de commencer votre nouvelle vie !");
-                    System.out.println("Le corps céleste vivable que vous avez trouver est :");
-                    corps.afficherCorpsCeleste();
-                }
-            }
+        asn.reducO2();
+        if(asn.getBouteilleO2().getO2actuel()<=0){
+            System.out.println("Vous êtes mort car votre bouteille d'oxygène est vide !");
+            asn.setEstVivant(false);
         }
         else{
-            System.out.println("Vous n'avez rencontré aucun corps céleste lors de ce tour !");
-        }
+            CorpsCeleste corps = univ.intersectionCorpsCeleste();
+            this.plusTour();
+            if(corps!=null){
+                if(corps.estDangereux() == true){
+                    asn.setEstVivant(false);
+                }
+                else{
+                    if(corps.estVivable()==false){
+                        System.out.println("Cette planète n'est pas vivable, vous avez néanmoins rechargé votre bouteille d'oxygène !");
+                        asn.getBouteilleO2().setO2actuel(asn.getBouteilleO2().getcapaO2Max());
+                    }
+                    else{
+                        asn.setTrouvePlanete(true);
+                        System.out.println("Bravo ! Vous avez trouvé une planète vivable en "+ this.nbTours+" tour(s), il est temps de commencer votre nouvelle vie !");
+                        System.out.println("Le corps céleste vivable que vous avez trouver est :");
+                        corps.afficherCorpsCeleste();
+                    }
+                }
+            }
+            else{
+                System.out.println("Vous n'avez rencontré aucun corps céleste lors de ce tour !");
+            }
+        } 
     }
 }
 

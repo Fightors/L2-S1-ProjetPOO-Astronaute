@@ -1,6 +1,6 @@
 package projet;
 
-public abstract class CorpsCeleste {
+public abstract class CorpsCeleste implements Deplacement {
     private int temperature;
     private float diametre;
     private float gravite;
@@ -21,7 +21,7 @@ public abstract class CorpsCeleste {
 
     public abstract boolean estVivable();
 
-    //methode abstraire afficher les donnees d'une Corp Celeste
+    //methode abstraire afficher les donnees d'une Corps Celeste
     public abstract void afficherCorpsCeleste();
 
     //les differents getters
