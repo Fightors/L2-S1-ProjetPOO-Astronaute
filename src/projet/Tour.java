@@ -1,7 +1,13 @@
 package projet;
 import java.util.Scanner;
 
+/**
+* Tour du jeu
+*/
 public class Tour{
+    /**
+    * Attribut qui détermine la "durée" du jeu
+    */
     private int nbTours;
 
     public Tour(){
@@ -14,7 +20,7 @@ public class Tour{
 
     public void jouerTour(Univers univ, Astronaute asn){
         univ.moveAste();
-        System.out.println("Postion de l'astronaute:" );
+        System.out.println("Position de l'astronaute:" );
         asn.getPos().affichagePos();
         asn.seDeplacer();
         asn.reducO2();
@@ -37,7 +43,7 @@ public class Tour{
                     else{
                         asn.setTrouvePlanete(true);
                         System.out.println("Bravo ! Vous avez trouvé une planète vivable en "+ this.nbTours+" tour(s), il est temps de commencer votre nouvelle vie !");
-                        System.out.println("Le corps céleste vivable que vous avez trouver est :");
+                        System.out.println("Le corps céleste vivable que vous avez trouvé est :");
                         corps.afficherCorpsCeleste();
                     }
                 }

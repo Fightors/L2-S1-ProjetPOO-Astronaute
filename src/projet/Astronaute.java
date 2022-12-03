@@ -3,12 +3,21 @@ package projet;
 import java.util.Scanner;
 
 public class Astronaute implements Deplacement{
+    /**
+    * Attributs de la classe Astronaute
+    */
     private BouteilleO2 bouteilleO2;
     private boolean estVivant;
     private Position pos;
     private Vaisseau vaisseau;
     private boolean trouvePlanete ;
 
+    /**
+    * Constructeur d'une instance de Astronaute
+    * Ses attributs sont déterminés
+    * Soit par valeur entrée (bouteille02, pos, vaisseau)
+    * Soit automatiquement (estVivant, trouvePlanete)
+    */
     public Astronaute (BouteilleO2 b, Position pos, Vaisseau vaisseau){
         this.bouteilleO2= b;
         this.estVivant = true;
@@ -17,6 +26,12 @@ public class Astronaute implements Deplacement{
         this.trouvePlanete = false;
     }
     
+    /**
+    * Procédure de déplacement de Astronaute
+    * On demande à l'utilisateur de choisir une direction & une puissance de déplacement
+    * Déplacement fait en fonction de la direction choisie & de la puissance du vaisseau
+    * Aucune valeur retournée, modification de l'attribut pos
+    */
     @Override
     public void seDeplacer(){
         Scanner sc = new Scanner (System.in);
@@ -50,6 +65,13 @@ public class Astronaute implements Deplacement{
         power=0;
     }
 
+    /**
+    * Procédure de rechargement de bouteille02 lorsque Astronaute sur une planète
+    * Est enclenchée uniquement si les conditions de la planète sont validées
+    * Aucune valeur retournée, modification de bouteille02
+    *
+    * @param p1 la planète analysée 
+    */
     public void rechargerO2 (Planete p1){
         if(p1.getTauxO2() > 0 && !(p1.getAirNocif())){
             this.bouteilleO2.setO2actuel(bouteilleO2.getcapaO2Max());
@@ -59,11 +81,24 @@ public class Astronaute implements Deplacement{
         }
     }
 
+    /**
+    * Procédure de réduction de la quantité de 02 dans bouteille02
+    * Utilisée en fonction des déplacements que Astronaute effectue
+    * Aucune valeur retournée
+    */
     public void reducO2(){
         this.bouteilleO2.setO2actuel(this.bouteilleO2.getO2actuel()-5);
     }
 
-    //les getters
+    /**
+    * Getters des attributs de Astronaute
+    *
+    * @return boolean estVivant
+    * @return Position pos
+    * @return Bouteille02 
+    * @return Vaisseau
+    * @return boolean trouvePlanete    
+    */
     public boolean getVivant (){
         return this.estVivant;
     }
@@ -80,7 +115,10 @@ public class Astronaute implements Deplacement{
         return this.trouvePlanete;
     }
     
-    //les setters
+    /**
+    * Setters des attributs de Astronaute
+    * Pas de valeurs retournées, modifications de celles-ci
+    */
     public void setPos(Position pos) {
         this.pos = pos;
     }

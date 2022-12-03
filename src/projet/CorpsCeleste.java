@@ -1,11 +1,21 @@
 package projet;
 
+/**
+* Classe mère de tous les types de corps célestes
+* Classe abstraite
+*/
 public abstract class CorpsCeleste implements Deplacement {
+    /**
+    * Attributs de CorpsCeleste
+    */
     private int temperature;
     private float diametre;
     private float gravite;
     private Position pos;
     
+    /**
+    * Constructeur de CorpsCeleste
+    */
     public CorpsCeleste (int t, float d, float g, Position pos){
         this.temperature = t;
         this.diametre = d;
@@ -13,18 +23,35 @@ public abstract class CorpsCeleste implements Deplacement {
         this.pos = pos;
     }
 
-    //methodes de CorpsCeleste
-
-    //si les limites supportables pour le corps humain sont depassees
-    //approcher du corps celeste => risque de mort
+    /**
+    * Si les limites supportables pour le corps humain sont depassées
+    * Approcher du corps celeste => mort de Astronaute
+    *
+    * @return boolean estDangereux
+    */
     public abstract boolean estDangereux();
 
+    /**
+    * Détermine si Astronaute peut survivre au long terme sur ce CorpsCeleste
+    *
+    * @return boolean estVivable
+    */
     public abstract boolean estVivable();
 
-    //methode abstraire afficher les donnees d'une Corps Celeste
+    /**
+    * Permet l'affichage des données d'un corps céleste
+    * Aucune valeur retournée
+    */
     public abstract void afficherCorpsCeleste();
 
-    //les differents getters
+    /**
+    * Getters des attributs de CorpsCeleste
+    *
+    * @return int temperature
+    * @return float diametre
+    * @return float gravite
+    * @return Position pos 
+    */
     public int getTemp (){
         return this.temperature;
     }
