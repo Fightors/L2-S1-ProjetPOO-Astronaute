@@ -12,33 +12,10 @@ import javafx.scene.Group;
 import java.util.ArrayList;
 
 public class Jeu{
-
-/*    public void start(Stage stage)
-    {
-        // set title for the stage
-        stage.setTitle("creating circle");
-        float posx= 100;
-        // create a circle
-        Circle circle = new Circle(0.0f, posx, 80.f,Color.BLUE);
-        stage.show();
-
-        
-  
-        // create a Group
-        Group group = new Group(circle);
-  
-        // create a scene
-        Scene scene = new Scene(group, 500, 300, Color.BLACK);
-  
-        // set the scene
-        
-        stage.setScene(scene);
-        stage.show();
-
-        
-    }
-*/   
+      
     public static void main(String[] args){
+        Graph graph = new Graph();
+
         Vaisseau v1;
         v1 = new Vaisseau(50);
         
@@ -76,8 +53,20 @@ public class Jeu{
             ArrayList<CorpsCeleste> l_scan = Thomas.getVaisseau().scanner(u, Thomas, 100);
             turn.jouerTour(u,Thomas);
             System.out.println("\n");
-//           launch(args);
         }
     }
     
 }
+
+/*
+Méthode affichage
+    Ouvre la fenêtre en affichant tout
+
+Méthode fermeture
+    Ferme la fenêtre
+
+Dans le main
+    Ouvre
+    On demande
+    On ferme
+*/
