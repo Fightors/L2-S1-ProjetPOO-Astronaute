@@ -1,42 +1,54 @@
 package projet;
 
 /**
-* Classe très importante car détermine les positions et déplacements
-* de tous les corps présents dans l'Univers
+* Classe tres importante car determine les positions et deplacements
+* de tous les CorpsCeleste presents dans l'Univers
 */
 public class Position {
     /**
-    * Attributs de Position
-    */
+     * Coordonnee x
+     */
     private int x;
+    /**
+     * Coordonnee y
+     */
     private int y;
 
+
     /**
-    * Constructeur de Position
-    */
+     * Constructeur d'une instance Position
+     * 
+     * @param x Coordonnee x
+     * @param y Coordonnee y
+     */
     public Position (int x, int y){
         this.x = x;
         this.y = y;
     }
 
     /**
-    * Getters des attributs x,y de Position
+    * Getter de l'attribut x de Position
     *
-    * @return int x
-    * @return int y  
+    * @return x
     */
     public int getX(){
         return this.x;
     }
+
+    /**
+     * Getter de l'attribut y de Position
+     * 
+     * @return y
+     */
     public int getY(){
         return this.y;
     }
 
     /**
-    * Procédure de modification de la Position
-    * Aucune valeur retournée
+    * Procedure de modification de la Position
+    * Aucune valeur retournee
     *
-    * @param Position p1  
+    * @param p1 La distance que nous allons parcourir (Position) 
     */
     public void additionnerPosition(Position p1){
         this.x += p1.getX();
@@ -44,7 +56,7 @@ public class Position {
     }
 
     /**
-    * Affichage de la Position
+    * Affichage de la Position dans le terminal
     */
     public void affichagePos(){
         System.out.println("pos X: " + this.x + ", pos Y: " + this.y);

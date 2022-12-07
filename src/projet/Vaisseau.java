@@ -1,14 +1,33 @@
 package projet;
-
 import java.util.ArrayList;
-import java.lang.Math.*;
+
+/**
+* Classe representant le Vaisseau. 
+* Sera equipe a l'Astronaute
+*/
 public class Vaisseau{
+    /**
+     * Puissance du Vaisseau, de combien il pourra se deplacer en un tour
+     */
     private int puissance;
 
+    /**
+     * Constructeur d'une instance de Vaisseau
+     * 
+     * @param puissance Puissance du Vaisseau
+     */
     public Vaisseau(int puissance) {
         this.puissance = puissance;
     }
 
+    /**
+     * Methode qui scan une zone autour du Vaisseau dans un rayon donne
+     * 
+     * @param u Univers a scanne
+     * @param astro Astronaute qui fera le scan
+     * @param rad Portee du scanner
+     * @return ls Liste des CorpsCeleste a portee du scanner
+     */
     public ArrayList<CorpsCeleste> scanner(Univers u, Astronaute astro, double rad){
         ArrayList<CorpsCeleste> ls = new ArrayList<CorpsCeleste>();
         double distance;
@@ -23,16 +42,26 @@ public class Vaisseau{
         int i = 1;
         for(CorpsCeleste c : ls){
             System.out.println("Corps celeste numero: " + i + " ,la temperature: " + c.getTemp() + "°C, avec diametre: " + c.getDiam() + " km, avec gravite: "
-                             + c.getGrav() + ", a la position X: " + c.getPos().getX() + ", position Y: " + c.getPos().getY());
+            + c.getGrav() + ", a la position X: " + c.getPos().getX() + ", position Y: " + c.getPos().getY());
             i++;            
         }
         return ls;
     }
     
+    /**
+     * Getter d'un des attrivuts de Vaisseau
+     * 
+     * @return puissance
+     */
     public int getPuissance(){
         return this.puissance;
     }
 
+    /**
+     * Setter d'un des attributs de Vaisseau
+     * 
+     * @param puissance La puissance du Vaisseau
+     */
     public void setPuissance(int puissance) {
         this.puissance = puissance;
     }

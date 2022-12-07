@@ -1,21 +1,37 @@
 package projet;
-import java.lang.Math.*;
 import java.util.ArrayList;
 
+/**
+ * Classe representant l'Univers ou se deroule la partie
+ */
 public class Univers{
+    /**
+     * L'Astronaute qui va se deplacer dans notre simulation
+     */
     private Astronaute astronaute;
+    /**
+     * La liste des CorpsCeleste qu'on pourra rencontrer dans la simulation
+     */
     private ArrayList<CorpsCeleste> listeCorps;
 
 
     /**
-     * @param astronaute
-     * @param listeCorps
+     * Constructeur d'une instance Univers
+     *  
+     * @param astronaute L'Astronaute
+     * @param listeCorps Les CorpsCeleste
      */
     public Univers(Astronaute astronaute, ArrayList<CorpsCeleste> listeCorps) {
         this.astronaute = astronaute;
         this.listeCorps = listeCorps;
     }
 
+
+    /**
+     * Ajoute l'Astronaute, le Vaisseau, la bouteille d'O2 et les CorpsCeleste dans notre Univers
+     * 
+     * @return u L'univers rempli de notre simualtion
+     */
     public static Univers universTest(){
         Vaisseau v1;
         v1 = new Vaisseau(50);
@@ -33,7 +49,6 @@ public class Univers{
         eto1 = new Etoile(500,50,50,new Position(200,250));
 
         ArrayList<CorpsCeleste> lC = new ArrayList<CorpsCeleste>();
-        ArrayList<CorpsCeleste> lS;
 
         lC.add(p3);
         lC.add(p2);
@@ -50,7 +65,11 @@ public class Univers{
         return u;
     }
 
-    //fonction qui va retourner un coprs celeste en verifiant si notre astronaute est dans un des rayons du corps celeste.
+    /**
+     * Fonction qui va retourner un CorpsCeleste en verifiant si notre astronaute est dans le rayon d'un des CorpsCeleste.
+     * 
+     * @return c Si le CorpsCeleste est en intersection avec notre astronaute
+     */ 
     public CorpsCeleste intersectionCorpsCeleste(){
         double distance;
 
@@ -72,6 +91,9 @@ public class Univers{
         return null;
     }
 
+    /**
+     * Va mouvoir tous les Asteroide de notre simulation selon leurs vecteurs
+     */
     public void moveAste(){
         for(CorpsCeleste c : this.listeCorps){
             if( c instanceof Asteroide){
@@ -81,7 +103,9 @@ public class Univers{
         }
     }
 
-    //affichage tout les corps celeste dans l'univers
+    /**
+     * Affiche tous les CorpsCeleste dans notre Univers
+     */
     public void affichage(){
         int i = 1;
         for(CorpsCeleste c : this.listeCorps){
@@ -91,18 +115,38 @@ public class Univers{
         }
     }
 
+    /**
+     * Getter d'un des attributs d'Univers
+     * 
+     * @return astronaute
+     */
     public Astronaute getAstronaute() {
         return astronaute;
     }
 
-    public void setAstronaute(Astronaute astronaute) {
-        this.astronaute = astronaute;
-    }
-
+    /**
+     * Getter d'un des attributs d'Univers
+     * 
+     * @return listeCorps
+     */
     public ArrayList<CorpsCeleste> getListeCorps() {
         return this.listeCorps;
     }
 
+    /**
+     * Setter d'un des attributs d'Univers
+     * 
+     * @param astronaute L'Astronaute dans notre Univers
+     */
+    public void setAstronaute(Astronaute astronaute) {
+        this.astronaute = astronaute;
+    }
+
+    /**
+     * Setter d'un des attributs d'Univers
+     * 
+     * @param listeCorps La liste de CorpsCeleste dans notre Univers
+     */
     public void setListeCorps(ArrayList<CorpsCeleste> listeCorps) {
         this.listeCorps = listeCorps;
     }

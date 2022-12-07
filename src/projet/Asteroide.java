@@ -1,24 +1,35 @@
 package projet;
 
+/**
+* Classe representant tous les Asteroide
+* Classe fille de CorpsCeleste
+*/
 public class Asteroide extends CorpsCeleste{
     /**
-    * Attribut de CorpsCeleste
+    * Vecteur de deplacement
     */ 
     private Position vecteur;
 
+
     /**
-    * Constructeur d'une instance de Asteroide
-    * Ses attributs, mis à part vecteur,
-    * sont attributs de la classe mère CorpsCeleste
-    */
+     *  Constructeur d'une instance de Asteroide
+     *  Ses attributs, mis a part vecteur,
+     *  sont attributs de la classe mere CorpsCeleste
+     * 
+     * @param t La temperature
+     * @param d Le diametre
+     * @param g L'indice gravitationel
+     * @param pos La position
+     * @param vect Le vecteur de deplacement
+     */
     public Asteroide (int t, float d, float g, Position pos, Position vect){
         super(t,d,g,pos);
         this.vecteur = vect;
     }
 
     /**
-    * Procédure de déplacement de Asteroide
-    * Ne retourne aucune Position, la modifie seulement
+    * Procedure de deplacement de Asteroide
+    * Modifie la Position de l'Asteroide a chaque tour pour le faire se deplacer
     */  
     @Override
     public void seDeplacer(){
@@ -26,10 +37,10 @@ public class Asteroide extends CorpsCeleste{
     }
 
     /**
-    * Fonction indiquant la dangerosité de Asteroide
-    * Retourne toujours vrai car collision = mort de Astronaute
+    * Fonction indiquant la dangerosite de Asteroide
+    * Retourne toujours vrai car si contact -> mort de Astronaute
     *
-    * @return boolean vrai  
+    * @return estDangereux  
     */
     public boolean estDangereux(){
         System.out.println("Vous êtes mort percuté par un astéroïde !");
@@ -37,11 +48,10 @@ public class Asteroide extends CorpsCeleste{
     }
 
     /**
-    * Fonction indiquant si il est possible de terminer la simulation
-    * En ayant 'réussi' à vivre sur Asteroide
-    * Retourne toujours faux
+    * Fonction indiquant s'il est possible de vivre sur l'Asteroide
+    * Retourne toujours faux car un Asteroide n'a pas des conditions vivables
     *
-    * @return boolean faux   
+    * @return estVivable   
     */
     public boolean estVivable(){
         return false;
@@ -51,15 +61,15 @@ public class Asteroide extends CorpsCeleste{
     * Getter de l'attribut vecteur (Position)
     * Retourne sa valeur en Position
     *
-    * @return Position 
+    * @return vecteur 
     */
     public Position getVecteur() {
         return this.vecteur;
     }
 
     /**
-    * Permet l'affichage des données d'un corps céleste
-    * Aucune valeur retournée
+    * Permet l'affichage des donnees d'un corps celeste
+    * Aucune valeur retournee
     */
     @Override
     public void afficherCorpsCeleste(){};

@@ -1,21 +1,37 @@
 package projet;
 
 /**
-* Classe mère de tous les types de corps célestes
+* Classe mere de tous les types de corps celestes
+* Implemente l'interface Deplacement
 * Classe abstraite
 */
 public abstract class CorpsCeleste implements Deplacement {
     /**
-    * Attributs de CorpsCeleste
+    * La temperature du CorpsCeleste
     */
     private int temperature;
+    /**
+    * La diametre du CorpsCeleste
+    */
     private float diametre;
+    /**
+    * L'indice gravitationel du CorpsCeleste
+    */
     private float gravite;
+    /**
+    * La position du CorpsCeleste
+    */
     private Position pos;
     
+  
     /**
-    * Constructeur de CorpsCeleste
-    */
+    * Constructeur d'une instance de CorpsCeleste
+
+     * @param t La temperature
+     * @param d Le diametre
+     * @param g L'indice gravitationel
+     * @param pos La position
+     */
     public CorpsCeleste (int t, float d, float g, Position pos){
         this.temperature = t;
         this.diametre = d;
@@ -24,43 +40,55 @@ public abstract class CorpsCeleste implements Deplacement {
     }
 
     /**
-    * Si les limites supportables pour le corps humain sont depassées
-    * Approcher du corps celeste => mort de Astronaute
+    * Si les limites supportables pour le corps humain sont depassees
+    * Approcher du corps celeste -> mort de Astronaute
     *
-    * @return boolean estDangereux
+    * @return Methode abstraite, ne retourne rien
     */
     public abstract boolean estDangereux();
 
     /**
-    * Détermine si Astronaute peut survivre au long terme sur ce CorpsCeleste
+    * Determine si Astronaute peut survivre au long terme sur ce CorpsCeleste
     *
-    * @return boolean estVivable
+    * @return Methode abstraite, ne retourne rien
     */
     public abstract boolean estVivable();
 
     /**
-    * Permet l'affichage des données d'un corps céleste
-    * Aucune valeur retournée
+    * Permet l'affichage des donnees d'un corps celeste
+    * Methode abstraite
     */
     public abstract void afficherCorpsCeleste();
 
     /**
-    * Getters des attributs de CorpsCeleste
+    * Getter d'un attribut de CorpsCeleste
     *
-    * @return int temperature
-    * @return float diametre
-    * @return float gravite
-    * @return Position pos 
+    * @return temperature
     */
     public int getTemp (){
         return this.temperature;
     }
+    /**
+    * Getter d'un attribut de CorpsCeleste
+    *
+    * @return  diametre
+    */
     public float getDiam (){
         return this.diametre;
     }
+    /**
+    * Getter d'un attribut de CorpsCeleste
+    *
+    * @return  gravite
+    */
     public float getGrav (){
         return this.gravite;
     }
+    /**
+    * Getter d'un attribut de CorpsCeleste
+    *
+    * @return  pos 
+    */
     public Position getPos (){
         return this.pos;
     }

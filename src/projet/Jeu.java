@@ -2,8 +2,16 @@ package projet;
 
 import java.util.ArrayList;
 
+/**
+* Classe contenant le main
+* La classe ou la partie va s'effectuer
+*/
 public class Jeu{
-      
+    /**
+     * Main ou se deroule la partie
+     * 
+     * @param args Argument du main
+     */
     public static void main(String[] args){
         Univers univ = Univers.universTest();
         Tour turn = new Tour();

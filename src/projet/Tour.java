@@ -1,23 +1,38 @@
 package projet;
-import java.util.Scanner;
 
 /**
-* Tour du jeu
-*/
+ * Classe representant chaque Tour de la partie
+ */
 public class Tour{
     /**
-    * Attribut qui détermine la "durée" du jeu
-    */
+     * Attribut qui determine la "duree" du jeu
+     */
     private int nbTours;
 
+    /**
+     * Constructeur d'une instance Tour
+     * De base le nombre de tours est initie a 0
+     */
     public Tour(){
         this.nbTours=0;
     }
 
+    /**
+     * Ajoute un tour au nombre de tours passe
+     */
     public void plusTour(){
         this.nbTours+=1;
     }
 
+
+    /**
+     * Cette methode fait se derouler l'integralite d'un tour et appelle toutes les methodes
+     * pour le deplacement, la reduction de l'oxygene, le scan des CorpsCeleste alentours
+     * Affiche dans le terminal des informations a chaque etape du tour
+     * 
+     * @param univ L'Univers de notre simulation qui va habiter notre Astronaute et nos CorpsCeleste
+     * @param asn L'Astronaute qui reside dans notre Univers
+     */
     public void jouerTour(Univers univ, Astronaute asn){
         univ.moveAste();
         System.out.println("Position de l'astronaute:" );

@@ -1,5 +1,7 @@
 package projet;
+import java.util.ArrayList;
 
+/* 
 import javafx.application.Application;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
@@ -14,11 +16,11 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import java.util.ArrayList;
 
 
-public class Graph extends Application {
 
+
+public class Graph {
     @Override 
     public void start(Stage stage){
         Univers univ = Univers.universTest();
@@ -36,7 +38,7 @@ public class Graph extends Application {
             this.jouerTour(univ,univ.getAstronaute());
             System.out.println("\n");
         }
-        */
+        
     }
 
     public Canvas draw(Univers u){
@@ -89,8 +91,8 @@ public class Graph extends Application {
     public void fermetureInterface(Stage stage){
         stage.close();
     }
-
+   
     public static void main(String[] args){
         launch(args);
-    }
-}
+    } 
+}*/
