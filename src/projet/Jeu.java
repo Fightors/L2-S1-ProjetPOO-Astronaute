@@ -1,7 +1,5 @@
 package projet;
 
-import java.util.ArrayList;
-
 /**
 * Classe contenant le main
 * La classe ou la partie va s'effectuer
@@ -18,7 +16,7 @@ public class Jeu{
 
         
         while(univ.getAstronaute().getVivant()==true && univ.getAstronaute().getTrouvePlanete() == false){
-            ArrayList<CorpsCeleste> l_scan = univ.getAstronaute().getVaisseau().scanner(univ, univ.getAstronaute(), 100);
+            univ.getAstronaute().getVaisseau().scanner(univ, univ.getAstronaute(), 100);
             turn.jouerTour(univ,univ.getAstronaute());
             System.out.println("\n");
         }
