@@ -11,7 +11,7 @@ public abstract class CorpsCeleste implements Deplacement {
     */
     private int temperature;
     /**
-    * La diametre du CorpsCeleste
+    * Le diametre du CorpsCeleste
     */
     private float diametre;
     /**
