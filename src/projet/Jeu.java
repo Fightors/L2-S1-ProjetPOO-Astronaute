@@ -25,16 +25,3 @@ public class Jeu{
     }
     
 }
-
-/*
-Méthode affichage
-    Ouvre la fenêtre en affichant tout
-
-Méthode fermeture
-    Ferme la fenêtre
-
-Dans le main
-    Ouvre
-    On demande
-    On ferme
-*/
