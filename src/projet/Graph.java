@@ -1,7 +1,5 @@
 package projet;
 import java.util.ArrayList;
-
-/* 
 import javafx.application.Application;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
@@ -38,7 +36,7 @@ public class Graph {
             this.jouerTour(univ,univ.getAstronaute());
             System.out.println("\n");
         }
-        
+        */
     }
 
     public Canvas draw(Univers u){
@@ -95,4 +93,4 @@ public class Graph {
     public static void main(String[] args){
         launch(args);
     } 
-}*/
+}
