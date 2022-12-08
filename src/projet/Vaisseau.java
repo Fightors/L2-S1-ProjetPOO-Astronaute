@@ -26,9 +26,8 @@ public class Vaisseau{
      * @param u Univers a scanne
      * @param astro Astronaute qui fera le scan
      * @param rad Portee du scanner
-     * @return ls Liste des CorpsCeleste a portee du scanner
      */
-    public ArrayList<CorpsCeleste> scanner(Univers u, Astronaute astro, double rad){
+    public void scanner(Univers u, Astronaute astro, double rad){
         ArrayList<CorpsCeleste> ls = new ArrayList<CorpsCeleste>();
         double distance;
 
@@ -45,7 +44,6 @@ public class Vaisseau{
             + c.getGrav() + ", a la position X: " + c.getPos().getX() + ", position Y: " + c.getPos().getY());
             i++;            
         }
-        return ls;
     }
     
     /**

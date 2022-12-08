@@ -27,6 +27,7 @@ public class Gazeuse extends Planete {
     *
     * @return estDangereux 
     */
+    @Override
     public boolean estDangereux(){
         return false;
     }
@@ -37,6 +38,7 @@ public class Gazeuse extends Planete {
     *
     * @return estVivable
     */
+    @Override
     public boolean estVivable(){
         return false;
     }
@@ -45,6 +47,7 @@ public class Gazeuse extends Planete {
     * Methode vide 
     * Gazeuse ne se deplace pas
     */
+    @Override
     public void seDeplacer(){
 
     }

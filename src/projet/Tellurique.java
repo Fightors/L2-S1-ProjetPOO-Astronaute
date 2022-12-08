@@ -27,6 +27,7 @@ public class Tellurique extends Planete {
     *
     * @return estDangereux 
     */
+    @Override
     public boolean estDangereux(){
         if(this.getGrav()<0.5 || this.getGrav()>2 || this.getAirNocif()==true || this.getTemp()<-50 || this.getTemp()>90){
             System.out.println("Vous êtes mort des conditions mortelles de cette planète !");
@@ -41,6 +42,7 @@ public class Tellurique extends Planete {
      * Methode vide
      * Tellurique ne se deplace pas
      */
+    @Override
     public void seDeplacer(){
         
     }
@@ -51,6 +53,7 @@ public class Tellurique extends Planete {
     *
     * @return estVivable 
     */
+    @Override
     public boolean estVivable(){
         return (this.getGrav()<2 && this.getGrav()>=1 && this.getAirNocif()==false && this.getTemp()>0 && this.getTemp()<50);
     }
