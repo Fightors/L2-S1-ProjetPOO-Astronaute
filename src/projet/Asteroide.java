@@ -42,6 +42,7 @@ public class Asteroide extends CorpsCeleste{
     *
     * @return estDangereux  
     */
+    @Override
     public boolean estDangereux(){
         System.out.println("Vous êtes mort percuté par un astéroïde !");
         return true;
@@ -53,6 +54,7 @@ public class Asteroide extends CorpsCeleste{
     *
     * @return estVivable   
     */
+    @Override
     public boolean estVivable(){
         return false;
     }

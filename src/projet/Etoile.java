@@ -31,6 +31,7 @@ public class Etoile extends CorpsCeleste {
     *
     * @return boolean true 
     */
+    @Override
     public boolean estDangereux(){
         System.out.println("Vous êtes mort brûlé par une étoile !");
         return true;
@@ -42,6 +43,7 @@ public class Etoile extends CorpsCeleste {
     *
     * @return estVivable 
     */
+    @Override
     public boolean estVivable(){
         return false;
     }
@@ -51,6 +53,7 @@ public class Etoile extends CorpsCeleste {
     * Etoile ne se deplace pas
     * Aucune valeur retournee
     */
+    @Override
     public void seDeplacer(){}
 
     /**
