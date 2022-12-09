@@ -9,9 +9,7 @@ Attention! Votre chemin sera semé d'embûches, telles que des astéroïdes, des
 Prêt-e pour l'aventure?
 
 ## Lien vers le Javadoc
-
-
-    [Javadoc](POO22_385K_C/doc/index.html)
+[Javadoc](https://gitlab.univ-nantes.fr/E180869X/POO22_385K_C/doc/index.html)
 
 
 ## Usage
