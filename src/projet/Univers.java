@@ -45,7 +45,7 @@ public class Univers{
         p3 = new Tellurique(20,20,1,new Position(250,250),80,false);
         p4 = new Gazeuse(0,50,0,new Position(50,300),2);
         p5 = new Tellurique(-50,50,1,new Position(300,100),50,false);
-        aste1 = new Asteroide(0,40,1,new Position(450,450),new Position(-20,-20));
+        aste1 = new Asteroide(0,40,1,new Position(450,350),new Position(-20,-20));
         eto1 = new Etoile(500,50,50,new Position(200,250));
 
         ArrayList<CorpsCeleste> lC = new ArrayList<CorpsCeleste>();
